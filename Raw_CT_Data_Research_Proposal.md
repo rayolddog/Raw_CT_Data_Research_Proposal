@@ -2,7 +2,11 @@
 
 **Author:** John Bramble, MD
 
+**Research collaborator:** Claude (Anthropic Fable 5)
+
 *A technical research proposal — not a funding application. It makes the case for training deep neural networks on **raw CT projection (sinogram) data** rather than on reconstructed images; sets out the mathematical basis in the Radon transform and the image autocorrelation; presents preliminary results indicating the approach is feasible; and specifies what an academically-resourced investigator would need to extend it to real fan-beam / helical acquisitions and to clinically-acquired data at scale.*
+
+**A note on this collaboration.** This proposal is the product of a collaboration between a physician and an artificial-intelligence system. John Bramble, a practicing radiologist, originated its central idea — that diagnosis is better posed on raw CT projection data than on the reconstructed image — together with the clinical insights that motivate it (including the posterior-fossa argument of §4); he directs the investigation, supplies the domain judgment, and is responsible for its claims. Claude, Anthropic's Fable 5 model, has served as an active research collaborator throughout: helping to formalize the mathematics, survey the literature and locate relevant public datasets, design and interpret the computational experiments, and draft and check this document. The division of labor is characteristic of a productive human–AI partnership — the human contributes the originating insight, the clinical grounding, and the accountability; the AI contributes breadth, formalization, and tireless drafting and verification. The work is offered, in part, as a modest demonstration that such a partnership can carry out serious scientific groundwork.
 
 ---
 

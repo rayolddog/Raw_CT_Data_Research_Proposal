@@ -2,7 +2,7 @@
 
 **Deep Learning on Raw CT Projection Data — rationale, feasibility evidence, and directions for projection-domain diagnosis.**
 
-Author: John Bramble, MD
+Author: John Bramble, MD — in collaboration with Claude (Anthropic Fable 5)
 
 This repository holds a technical research proposal (not a funding application) arguing
 that automated diagnosis from CT is better posed on the **raw projection (sinogram)
