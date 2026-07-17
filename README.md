@@ -83,6 +83,15 @@ program needs; and it was assembled for low-dose reconstruction research, so it 
 general pathology annotations rather than a curated ICH ground truth — hemorrhage labels
 on the head subset would need to be established separately.
 
+**Use this collection to *verify reconstruction fidelity* — not to train an ICH detector.**
+Its 99 head studies hold far too few hemorrhages, and no ICH labels, to source a model
+dedicated to hemorrhage detection. For scale: the feasibility study here trained on a
+200,000-slice RSNA-derived cohort held at the dataset's base prevalence of **14.5 %
+positive** (≈ 28,000 positive slices). (A separate *patient-decorrelated* subset — built to
+break the ~30-correlated-slices-per-patient structure of the full ~750k-image set by keeping
+only a few independent slices per patient, hemorrhage slices first — runs at a higher ~34 %
+positive fraction by construction; the two figures describe different cohorts.)
+
 ## Figures
 
 `schematic_autocorrelation.png` (Figure 1) and `schematic_sinogram_motion.png` (Figure 2)
