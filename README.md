@@ -35,7 +35,14 @@ them. The exemplar task is detection of acute intracranial hemorrhage (ICH).
 4. **Directions** — extension to real fan-beam/helical geometry; reconstruction-fidelity
    validation against the Mayo Clinic / AAPM measured-projection dataset; the data-scale
    problem (≈200k studies, prospective raw-data retention, single-center vs multi-center
-   accrual); and open technical questions.
+   accrual); open technical questions; and the eventual clinical form — a **dual-domain
+   ensemble** that runs a raw-data detector alongside an image-domain detector on the same
+   acquisition and combines their outputs, *augmenting* rather than replacing image-domain
+   systems. This is motivated by the RSNA 2019 Kaggle challenge, where every top team (of
+   1,345) won through ensembles of 7–31 models; the two domains are complementary in error
+   mode (the image-domain model can be fooled by reconstruction artifacts the raw model
+   never sees), and the prospective test is whether the raw + image ensemble beats the
+   image-domain detector alone.
 
 ## Honest scope
 

@@ -9,6 +9,7 @@ to reuse.
 Usage: md_to_pdf.py INPUT.md OUTPUT.pdf
 """
 import html
+import os
 import re
 import sys
 
@@ -25,7 +26,24 @@ from reportlab.lib.utils import ImageReader
 
 # DejaVu has full Greek + math glyphs (integral, <=, theta, omega) that the
 # built-in Helvetica/WinAnsi fonts lack — required for the mathematics section.
-_DEJAVU = "/usr/share/fonts/truetype/dejavu"
+def _find_dejavu():
+    """Locate a DejaVu font dir portably: the Linux build host first, then common
+    macOS locations, then matplotlib's bundled copy — so a Mac build renders the
+    Greek/math glyphs instead of silently falling back to Helvetica."""
+    cands = ["/usr/share/fonts/truetype/dejavu", "/usr/share/fonts/dejavu",
+             "/opt/homebrew/share/fonts", "/usr/local/share/fonts"]
+    try:
+        import matplotlib
+        cands.append(os.path.join(matplotlib.get_data_path(), "fonts", "ttf"))
+    except Exception:
+        pass
+    for d in cands:
+        if os.path.exists(os.path.join(d, "DejaVuSans.ttf")):
+            return d
+    return cands[0]
+
+
+_DEJAVU = _find_dejavu()
 BODY_FONT, BOLD_FONT, ITAL_FONT, MONO_FONT = ("Helvetica", "Helvetica-Bold",
                                               "Helvetica-Oblique", "Courier")
 try:
