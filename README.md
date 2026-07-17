@@ -26,10 +26,12 @@ them. The exemplar task is detection of acute intracranial hemorrhage (ICH).
    encodes the image autocorrelation* (Figure 1), the Gabor feature basis, and the
    data-processing-inequality argument (Figure 2).
 3. **Feasibility results** (on synthetic parallel-beam sinograms from the RSNA 2019 ICH
-   dataset): projection-domain ICH detection at **macro-AUC 0.946**, on par with a
-   matched image-domain twin; an interpretable learned-kernel domain signature; a
-   sinogram-native architecture with a statistically robust gain; and a controlled,
-   *conditional* angular-robustness result.
+   dataset): projection-domain ICH detection at **macro-AUC 0.946** on a slice-level split
+   and **0.871** on a stricter patient-disjoint split (both reported, since slice-level
+   splits leak patients given ~30 correlated slices per study), on par with a matched
+   image-domain twin; an interpretable learned-kernel domain signature; a sinogram-native
+   architecture with a statistically robust gain; and a controlled, *conditional*
+   angular-robustness result.
 4. **Directions** — extension to real fan-beam/helical geometry; reconstruction-fidelity
    validation against the Mayo Clinic / AAPM measured-projection dataset; the data-scale
    problem (≈200k studies, prospective raw-data retention, single-center vs multi-center
