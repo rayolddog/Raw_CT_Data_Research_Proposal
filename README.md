@@ -43,6 +43,46 @@ demonstrate the raw-data fidelity/artifact advantages. Those require true measur
 fan-beam helical projections and clinically-acquired data at academic scale — the work
 this proposal sets out for a suitably resourced investigator.
 
+## Public measured-projection data: the Mayo Clinic / AAPM dataset
+
+The real measured projection data needed to extend this work (the Directions above) is
+publicly available as the **Low Dose CT Image and Projection Data
+(LDCT-and-Projection-data)** collection from Mayo Clinic on The Cancer Imaging Archive
+(TCIA), sponsored by the AAPM and NIH/NIBIB:
+
+- **<https://www.cancerimagingarchive.net/collection/ldct-and-projection-data/>**
+  — DOI [10.7937/9npb-2637](https://doi.org/10.7937/9npb-2637); described in Moen et al.,
+  "Low-dose CT image and projection dataset," *Medical Physics* 48(2), 2021
+  ([10.1002/mp.14594](https://doi.org/10.1002/mp.14594)).
+
+**What the archive contains — 299 patients:** 99 head / neuro (case IDs `N###`), 100 chest
+(`C###`), and 100 abdomen (`L###`). For each patient it provides three components:
+
+1. **Measured raw projection data** in the open **DICOM-CT-PD** format — an extended DICOM
+   that stores the *acquired* attenuation/projection (sinogram) values together with the
+   full acquisition geometry in the header. This is the projection-domain data this
+   proposal argues for, as measured rather than re-projected.
+2. **Reconstructed DICOM images** (all via filtered back-projection).
+3. **Excel clinical reports** — demographics, diagnostic/pathology annotations, measurements.
+
+Each patient has **two projection sets**: a full routine-dose acquisition and a
+**simulated reduced-dose** version produced by inserting noise into the full-dose
+projections (head and abdomen at 25 % of routine dose, chest at 10 %). Acquisitions are
+**helical**, on **two vendors' scanners** — roughly 150 cases on a Siemens SOMATOM
+Definition Flash and 149 on a GE Lightspeed VCT — which makes the collection directly
+useful for probing the *vendor-specific* nature of reconstruction. It grew out of the 2016
+AAPM / Mayo Low Dose CT Grand Challenge.
+
+**Fit and limits for this program.** The 99 head cases supply real measured fan-beam /
+helical neuro projections — the concrete way to test whether the representation and
+architecture survive real geometry, which the synthetic parallel-beam experiments here
+cannot. The two-vendor split directly exercises the vendor-specific-reconstruction
+argument. Two limits worth stating: at 299 patients (99 head) this is a **fidelity and
+geometry validation resource, not a training set at the ≈200k-study scale** the full
+program needs; and it was assembled for low-dose reconstruction research, so it carries
+general pathology annotations rather than a curated ICH ground truth — hemorrhage labels
+on the head subset would need to be established separately.
+
 ## Figures
 
 `schematic_autocorrelation.png` (Figure 1) and `schematic_sinogram_motion.png` (Figure 2)
