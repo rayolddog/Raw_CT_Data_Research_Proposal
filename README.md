@@ -11,6 +11,10 @@ vendor-specific, artifact-introducing inverse, and by the data-processing inequa
 projections carry at least as much diagnostic information as any image computed from
 them. The exemplar task is detection of acute intracranial hemorrhage (ICH).
 
+**Code & experiments:** the reference implementation, experiments, results, and figures
+behind the §5 feasibility work are in the companion repository
+**[projection-domain-ich](https://github.com/rayolddog/projection-domain-ich)**.
+
 ## Read it
 
 - **[Raw_CT_Data_Research_Proposal.pdf](Raw_CT_Data_Research_Proposal.pdf)** — the
