@@ -142,6 +142,8 @@ The curve has not plateaued at ~180k — directly relevant to the data-scale arg
 
 **Summary.** The representation-and-architecture question is answered: ICH is detectable from a projection-domain encoding at image-domain-competitive accuracy, the network's learned features are interpretable and geometry-aligned, and a projection-native architecture measurably helps. What synthetic parallel-beam data *cannot* show — the fidelity and artifact advantages of §4 — is the object of §6.
 
+**Code availability.** The Python programs behind these preliminary studies — the forward-projection and cohort-construction pipeline, the twin-protocol training code, the kernel-visualization and whitening analyses, and the sinogram-native architecture search — are available at github.com/rayolddog/projection-domain-ich. They document the neural-network design considerations that arise specifically when the input is a raw CT sinogram rather than a reconstructed image, and are intended as background for a group developing a raw-data model for ICH or other pathologies.
+
 ---
 
 ## 6. Directions for further investigation
