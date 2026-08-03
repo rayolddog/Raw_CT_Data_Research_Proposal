@@ -13,7 +13,11 @@ them. The exemplar task is detection of acute intracranial hemorrhage (ICH).
 
 **Code & experiments:** the reference implementation, experiments, results, and figures
 behind the §5 feasibility work are in the companion repository
-**[projection-domain-ich](https://github.com/rayolddog/projection-domain-ich)**.
+**[projection-domain-ich](https://github.com/rayolddog/projection-domain-ich)**. It holds
+several Python programs from preliminary studies of neural network design considerations
+when working with raw CT sinograms; that code and its accompanying notes are useful
+background for developing an AI to process raw CT data for the identification of
+pathologies such as intracranial hemorrhage.
 
 ## Read it
 
